@@ -9,13 +9,15 @@ import "./styles.css";
 // == Composant
 const NavBar = ({ allPages, currentPage, changeCurrentPage }) => {
   return (
-    <ul className="nav justify-content-center nav-pills">
+    <ul className="nav justify-content-center nav-pills mb-3">
       {allPages.map((page) => (
         <li className="nav-item" key={page.name}>
           <Link
             to={page.href}
             className={
-              page.name === currentPage.name ? "nav-link active" : "nav-link"
+              page.name === currentPage.name
+                ? "nav-link active bg-info"
+                : "nav-link text-info"
             }
             href={page.href}
             onClick={() => {
